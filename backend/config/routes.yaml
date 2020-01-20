@@ -7,3 +7,14 @@ pub_contact:
 pub_login:
     path: /login
     controller: App\Controller\Pub\LoginController::index
+pub_signup:
+    path: /signup
+    controller: App\Controller\Pub\SignupController::index
+
+
+priv_pannel:
+    path: /pannel
+    controller: App\Controller\Priv\PannelController::index
+priv_admin:
+    path: /admin
+    controller: App\Controller\Priv\AdminController::index
