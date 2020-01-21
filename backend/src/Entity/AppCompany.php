@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * AppCompany
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="app_company")
  * @ORM\Entity
  */
-class AppCompany
+class AppCompany implements UserInterface
 {
     /**
      * @var int
@@ -33,7 +34,7 @@ class AppCompany
      *
      * @ORM\Column(name="insert_platform", type="string", length=3, nullable=true, options={"default"="'1'"})
      */
-    private $insertPlatform = '\'1\'';
+    private $insertPlatform = "'1'";
 
     /**
      * @var string|null
@@ -103,14 +104,14 @@ class AppCompany
      *
      * @ORM\Column(name="is_erpsent", type="string", length=3, nullable=true, options={"default"="'0'"})
      */
-    private $isErpsent = '\'0\'';
+    private $isErpsent = "0";
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="is_enabled", type="string", length=3, nullable=true, options={"default"="'1'"})
      */
-    private $isEnabled = '\'1\'';
+    private $isEnabled = "1";
 
     /**
      * @var int|null
@@ -596,5 +597,21 @@ class AppCompany
         return $this;
     }
 
+    public function eraseCredentials() {;}
 
-}
+    public function getSalt() 
+    {
+        return null;
+    }
+
+    public function getUsername(): string 
+    {
+        return $this->email;
+    }
+
+    public function getRoles(): array
+    {
+        return ["ROLE_USER"];
+    }
+
+}// AppCompany

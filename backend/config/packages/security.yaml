@@ -8,6 +8,10 @@ security:
             security: false
         main:
             anonymous: lazy
+    encoders:
+        App\Entity\AppCompany:
+            algorithm: bcrypt
+            cost: 4
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
