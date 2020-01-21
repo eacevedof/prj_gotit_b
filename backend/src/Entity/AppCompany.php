@@ -2,8 +2,11 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * AppCompany
@@ -231,7 +234,7 @@ class AppCompany implements UserInterface
      * @ORM\Column(name="id_status", type="integer", nullable=true, options={"default"="NULL","comment"="app_array.id (type=companystatus)"})
      */
     private $idStatus = null;
-
+    
     public function getId(): ?int
     {
         return $this->id;
@@ -614,4 +617,6 @@ class AppCompany implements UserInterface
         return ["ROLE_USER"];
     }
 
+    
+    
 }// AppCompany
