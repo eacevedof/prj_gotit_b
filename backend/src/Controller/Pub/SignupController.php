@@ -35,7 +35,7 @@ class SignupController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->persist($company);
 
-            //$em->flush();
+            $em->flush();
             
             return $this->redirectToRoute("pub_index");
         }

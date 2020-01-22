@@ -51,7 +51,7 @@ class AppCompany implements UserInterface
      *
      * @ORM\Column(name="insert_date", type="datetime", nullable=false, options={"default"="current_timestamp()"})
      */
-    private $insertDate = 'current_timestamp()';
+    private $insertDate = null;
 
     /**
      * @var string|null
@@ -72,7 +72,7 @@ class AppCompany implements UserInterface
      *
      * @ORM\Column(name="update_date", type="datetime", nullable=true, options={"default"="current_timestamp()"})
      */
-    private $updateDate = 'current_timestamp()';
+    private $updateDate = null;
 
     /**
      * @var string|null

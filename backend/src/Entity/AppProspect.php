@@ -26,77 +26,77 @@ class AppProspect
      *
      * @ORM\Column(name="processflag", type="string", length=5, nullable=true, options={"default"="NULL"})
      */
-    private $processflag = 'NULL';
+    private $processflag = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="insert_platform", type="string", length=3, nullable=true, options={"default"="'1'"})
      */
-    private $insertPlatform = '\'1\'';
+    private $insertPlatform = "1";
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="insert_user", type="string", length=15, nullable=true, options={"default"="NULL"})
      */
-    private $insertUser = 'NULL';
+    private $insertUser = null;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="insert_date", type="datetime", nullable=false, options={"default"="current_timestamp()"})
      */
-    private $insertDate = 'current_timestamp()';
+    private $insertDate = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="update_platform", type="string", length=3, nullable=true, options={"default"="NULL"})
      */
-    private $updatePlatform = 'NULL';
+    private $updatePlatform = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="update_user", type="string", length=15, nullable=true, options={"default"="NULL"})
      */
-    private $updateUser = 'NULL';
+    private $updateUser = null;
 
     /**
      * @var \DateTime|null
      *
      * @ORM\Column(name="update_date", type="datetime", nullable=true, options={"default"="current_timestamp()"})
      */
-    private $updateDate = 'current_timestamp()';
+    private $updateDate = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="delete_platform", type="string", length=3, nullable=true, options={"default"="NULL"})
      */
-    private $deletePlatform = 'NULL';
+    private $deletePlatform = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="delete_user", type="string", length=15, nullable=true, options={"default"="NULL"})
      */
-    private $deleteUser = 'NULL';
+    private $deleteUser = null;
 
     /**
      * @var \DateTime|null
      *
      * @ORM\Column(name="delete_date", type="datetime", nullable=true, options={"default"="NULL"})
      */
-    private $deleteDate = 'NULL';
+    private $deleteDate = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="cru_csvnote", type="string", length=500, nullable=true, options={"default"="NULL"})
      */
-    private $cruCsvnote = 'NULL';
+    private $cruCsvnote = null;
 
     /**
      * @var string|null
@@ -110,70 +110,70 @@ class AppProspect
      *
      * @ORM\Column(name="is_enabled", type="string", length=3, nullable=true, options={"default"="'1'"})
      */
-    private $isEnabled = '\'1\'';
+    private $isEnabled = "1";
 
     /**
      * @var int|null
      *
      * @ORM\Column(name="i", type="integer", nullable=true, options={"default"="NULL"})
      */
-    private $i = 'NULL';
+    private $i = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="code_erp", type="string", length=25, nullable=true, options={"default"="NULL"})
      */
-    private $codeErp = 'NULL';
+    private $codeErp = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="nickname", type="string", length=100, nullable=true, options={"default"="NULL"})
      */
-    private $nickname = 'NULL';
+    private $nickname = null;
 
     /**
      * @var \DateTime|null
      *
      * @ORM\Column(name="birthday", type="date", nullable=true, options={"default"="NULL"})
      */
-    private $birthday = 'NULL';
+    private $birthday = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="email", type="string", length=100, nullable=true, options={"default"="NULL"})
      */
-    private $email = 'NULL';
+    private $email = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="password", type="string", length=250, nullable=true, options={"default"="NULL"})
      */
-    private $password = 'NULL';
+    private $password = null;
 
     /**
      * @var int|null
      *
      * @ORM\Column(name="id_gender", type="integer", nullable=true, options={"default"="NULL","comment"="app_array.id (type=gender)"})
      */
-    private $idGender = 'NULL';
+    private $idGender = null;
 
     /**
      * @var int|null
      *
      * @ORM\Column(name="id_country", type="integer", nullable=true, options={"default"="NULL","comment"="app_array.id (type=countries)"})
      */
-    private $idCountry = 'NULL';
+    private $idCountry = null;
 
     /**
      * @var int|null
      *
      * @ORM\Column(name="id_city", type="integer", nullable=true, options={"default"="NULL","comment"="app_array.id (type=cities)"})
      */
-    private $idCity = 'NULL';
+    private $idCity = null;
 
     /**
      * @var int|null
@@ -187,28 +187,28 @@ class AppProspect
      *
      * @ORM\Column(name="total_points", type="integer", nullable=true, options={"default"="NULL","comment"="puntos acumulados"})
      */
-    private $totalPoints = 'NULL';
+    private $totalPoints = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="url_picture", type="string", length=250, nullable=true, options={"default"="NULL"})
      */
-    private $urlPicture = 'NULL';
+    private $urlPicture = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="phone", type="string", length=25, nullable=true, options={"default"="NULL"})
      */
-    private $phone = 'NULL';
+    private $phone = null;
 
     /**
      * @var int|null
      *
      * @ORM\Column(name="id_status", type="integer", nullable=true, options={"default"="NULL","comment"="app_array.id (type=userstatus)"})
      */
-    private $idStatus = 'NULL';
+    private $idStatus = null;
 
     public function getId(): ?int
     {

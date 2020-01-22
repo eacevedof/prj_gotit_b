@@ -26,77 +26,77 @@ class AppMail
      *
      * @ORM\Column(name="processflag", type="string", length=5, nullable=true, options={"default"="NULL"})
      */
-    private $processflag = 'NULL';
+    private $processflag = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="insert_platform", type="string", length=3, nullable=true, options={"default"="'1'"})
      */
-    private $insertPlatform = '\'1\'';
+    private $insertPlatform = "1";
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="insert_user", type="string", length=15, nullable=true, options={"default"="NULL"})
      */
-    private $insertUser = 'NULL';
+    private $insertUser = null;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="insert_date", type="datetime", nullable=false, options={"default"="current_timestamp()"})
      */
-    private $insertDate = 'current_timestamp()';
+    private $insertDate = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="update_platform", type="string", length=3, nullable=true, options={"default"="NULL"})
      */
-    private $updatePlatform = 'NULL';
+    private $updatePlatform = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="update_user", type="string", length=15, nullable=true, options={"default"="NULL"})
      */
-    private $updateUser = 'NULL';
+    private $updateUser = null;
 
     /**
      * @var \DateTime|null
      *
      * @ORM\Column(name="update_date", type="datetime", nullable=true, options={"default"="current_timestamp()"})
      */
-    private $updateDate = 'current_timestamp()';
+    private $updateDate = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="delete_platform", type="string", length=3, nullable=true, options={"default"="NULL"})
      */
-    private $deletePlatform = 'NULL';
+    private $deletePlatform = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="delete_user", type="string", length=15, nullable=true, options={"default"="NULL"})
      */
-    private $deleteUser = 'NULL';
+    private $deleteUser = null;
 
     /**
      * @var \DateTime|null
      *
      * @ORM\Column(name="delete_date", type="datetime", nullable=true, options={"default"="NULL"})
      */
-    private $deleteDate = 'NULL';
+    private $deleteDate = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="cru_csvnote", type="string", length=500, nullable=true, options={"default"="NULL"})
      */
-    private $cruCsvnote = 'NULL';
+    private $cruCsvnote = null;
 
     /**
      * @var string|null
@@ -110,84 +110,84 @@ class AppMail
      *
      * @ORM\Column(name="is_enabled", type="string", length=3, nullable=true, options={"default"="'1'"})
      */
-    private $isEnabled = '\'1\'';
+    private $isEnabled = "1";
 
     /**
      * @var int|null
      *
      * @ORM\Column(name="i", type="integer", nullable=true, options={"default"="NULL"})
      */
-    private $i = 'NULL';
+    private $i = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="from_mail", type="string", length=250, nullable=true, options={"default"="NULL"})
      */
-    private $fromMail = 'NULL';
+    private $fromMail = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="from_title", type="string", length=250, nullable=true, options={"default"="NULL"})
      */
-    private $fromTitle = 'NULL';
+    private $fromTitle = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="to", type="string", length=2000, nullable=true, options={"default"="NULL"})
      */
-    private $to = 'NULL';
+    private $to = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="cc", type="string", length=2000, nullable=true, options={"default"="NULL"})
      */
-    private $cc = 'NULL';
+    private $cc = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="bcc", type="string", length=2000, nullable=true, options={"default"="NULL"})
      */
-    private $bcc = 'NULL';
+    private $bcc = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="subject", type="string", length=500, nullable=true, options={"default"="NULL"})
      */
-    private $subject = 'NULL';
+    private $subject = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="body", type="text", length=16777215, nullable=true, options={"default"="NULL"})
      */
-    private $body = 'NULL';
+    private $body = null;
 
     /**
      * @var int|null
      *
      * @ORM\Column(name="id_status", type="integer", nullable=true, options={"default"="NULL","comment"="app_array.id (type=mailstatus)"})
      */
-    private $idStatus = 'NULL';
+    private $idStatus = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="id_entity", type="string", length=25, nullable=true, options={"default"="NULL","comment"="app_table.id"})
      */
-    private $idEntity = 'NULL';
+    private $idEntity = null;
 
     /**
      * @var int|null
      *
      * @ORM\Column(name="id_entity_desc", type="integer", nullable=true, options={"default"="NULL","comment"="app_array.id (type=entities)"})
      */
-    private $idEntityDesc = 'NULL';
+    private $idEntityDesc = null;
 
     public function getId(): ?int
     {

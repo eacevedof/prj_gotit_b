@@ -26,77 +26,77 @@ class AppPromotion
      *
      * @ORM\Column(name="processflag", type="string", length=5, nullable=true, options={"default"="NULL"})
      */
-    private $processflag = 'NULL';
+    private $processflag = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="insert_platform", type="string", length=3, nullable=true, options={"default"="'1'"})
      */
-    private $insertPlatform = '\'1\'';
+    private $insertPlatform = "1";
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="insert_user", type="string", length=15, nullable=true, options={"default"="NULL"})
      */
-    private $insertUser = 'NULL';
+    private $insertUser = null;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="insert_date", type="datetime", nullable=false, options={"default"="current_timestamp()"})
      */
-    private $insertDate = 'current_timestamp()';
+    private $insertDate = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="update_platform", type="string", length=3, nullable=true, options={"default"="NULL"})
      */
-    private $updatePlatform = 'NULL';
+    private $updatePlatform = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="update_user", type="string", length=15, nullable=true, options={"default"="NULL"})
      */
-    private $updateUser = 'NULL';
+    private $updateUser = null;
 
     /**
      * @var \DateTime|null
      *
      * @ORM\Column(name="update_date", type="datetime", nullable=true, options={"default"="current_timestamp()"})
      */
-    private $updateDate = 'current_timestamp()';
+    private $updateDate = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="delete_platform", type="string", length=3, nullable=true, options={"default"="NULL"})
      */
-    private $deletePlatform = 'NULL';
+    private $deletePlatform = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="delete_user", type="string", length=15, nullable=true, options={"default"="NULL"})
      */
-    private $deleteUser = 'NULL';
+    private $deleteUser = null;
 
     /**
      * @var \DateTime|null
      *
      * @ORM\Column(name="delete_date", type="datetime", nullable=true, options={"default"="NULL"})
      */
-    private $deleteDate = 'NULL';
+    private $deleteDate = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="cru_csvnote", type="string", length=500, nullable=true, options={"default"="NULL"})
      */
-    private $cruCsvnote = 'NULL';
+    private $cruCsvnote = null;
 
     /**
      * @var string|null
@@ -110,105 +110,105 @@ class AppPromotion
      *
      * @ORM\Column(name="is_enabled", type="string", length=3, nullable=true, options={"default"="'1'"})
      */
-    private $isEnabled = '\'1\'';
+    private $isEnabled = "1";
 
     /**
      * @var int|null
      *
      * @ORM\Column(name="i", type="integer", nullable=true, options={"default"="NULL"})
      */
-    private $i = 'NULL';
+    private $i = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="code_erp", type="string", length=25, nullable=true, options={"default"="NULL"})
      */
-    private $codeErp = 'NULL';
+    private $codeErp = null;
 
     /**
      * @var \DateTime|null
      *
      * @ORM\Column(name="date_start", type="datetime", nullable=true, options={"default"="NULL"})
      */
-    private $dateStart = 'NULL';
+    private $dateStart = null;
 
     /**
      * @var \DateTime|null
      *
      * @ORM\Column(name="date_end", type="datetime", nullable=true, options={"default"="NULL"})
      */
-    private $dateEnd = 'NULL';
+    private $dateEnd = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="original_price", type="decimal", precision=11, scale=3, nullable=true, options={"default"="NULL"})
      */
-    private $originalPrice = 'NULL';
+    private $originalPrice = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="promo_price", type="decimal", precision=11, scale=3, nullable=true, options={"default"="NULL"})
      */
-    private $promoPrice = 'NULL';
+    private $promoPrice = null;
 
     /**
      * @var int|null
      *
      * @ORM\Column(name="max_prospects", type="integer", nullable=true, options={"default"="NULL","comment"="el número máximo de inscritos"})
      */
-    private $maxProspects = 'NULL';
+    private $maxProspects = null;
 
     /**
      * @var int|null
      *
      * @ORM\Column(name="id_status", type="integer", nullable=true, options={"default"="NULL","comment"="app_array.id (type=promostatus) online,stopped,cancelled"})
      */
-    private $idStatus = 'NULL';
+    private $idStatus = null;
 
     /**
      * @var int|null
      *
      * @ORM\Column(name="is_acumulable", type="integer", nullable=true, options={"default"="NULL","comment"="si tiene función de bono"})
      */
-    private $isAcumulable = 'NULL';
+    private $isAcumulable = null;
 
     /**
      * @var int|null
      *
      * @ORM\Column(name="min_acumulable", type="integer", nullable=true, options={"default"="NULL","comment"="las promos mínimas para reclamar el bono"})
      */
-    private $minAcumulable = 'NULL';
+    private $minAcumulable = null;
 
     /**
      * @var int|null
      *
      * @ORM\Column(name="max_acumperiod", type="integer", nullable=true, options={"default"="NULL","comment"="máximo en días que se puede acumular"})
      */
-    private $maxAcumperiod = 'NULL';
+    private $maxAcumperiod = null;
 
     /**
      * @var int|null
      *
      * @ORM\Column(name="free_units", type="integer", nullable=true, options={"default"="NULL","comment"="unidades a regalar"})
      */
-    private $freeUnits = 'NULL';
+    private $freeUnits = null;
 
     /**
      * @var int|null
      *
      * @ORM\Column(name="repeat_period", type="integer", nullable=true, options={"default"="NULL","comment"="dias que tienen que pasar para poder insribirse nuevamente"})
      */
-    private $repeatPeriod = 'NULL';
+    private $repeatPeriod = null;
 
     /**
      * @var string|null
      *
      * @ORM\Column(name="notes", type="string", length=250, nullable=true, options={"default"="NULL","comment"="notas que no se publicarán"})
      */
-    private $notes = 'NULL';
+    private $notes = null;
 
     public function getId(): ?int
     {
