@@ -7,7 +7,8 @@ use App\Form\SignupType as SigunpForm;
 
 final class AppCompanyService extends BaseService
 {
-    public function __construct($arinput = []) {
+    public function __construct($arinput = []) 
+    {
         parent::__construct($arinput);
     }
     
@@ -21,7 +22,6 @@ final class AppCompanyService extends BaseService
         $container = $this->arinput["container"];
         //@var Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
         $encoder = $this->arinput["encoder"];
-        
         
         $company = new AppCompany();
         $form = $container->get("form.factory")->create(SigunpForm::class, $company);
