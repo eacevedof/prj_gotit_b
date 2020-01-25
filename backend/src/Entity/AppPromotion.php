@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * AppPromotion
  *
  * @ORM\Table(name="app_promotion")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\AppPromotionRepository")
  */
 class AppPromotion
 {
@@ -103,7 +103,7 @@ class AppPromotion
      *
      * @ORM\Column(name="is_erpsent", type="string", length=3, nullable=true, options={"default"="'0'"})
      */
-    private $isErpsent = '\'0\'';
+    private $isErpsent = "0";
 
     /**
      * @var string|null

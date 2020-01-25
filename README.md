@@ -6,8 +6,11 @@ Api rest backend
 //entidad
 php bin/console doctrine:mapping:import App\\Entity annotation --path=src/Entity
 
+//aplicar este valor a las entidades (@python)
+* @ORM\Entity(repositoryClass="App\Repository\<EntityName>Repository)
+
 //setters y getters
-php bin/console make:entity --regenerate App
+php bin/console make:entity --regenerate
 
 //controlador
 php bin/console make:controller AppArrayController

@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * AppMailAttachments
  *
  * @ORM\Table(name="app_mail_attachments")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\AppMailAttachmentsRepository")
  */
 class AppMailAttachments
 {

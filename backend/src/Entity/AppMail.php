@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * AppMail
  *
  * @ORM\Table(name="app_mail")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\AppMailRepository")
  */
 class AppMail
 {
@@ -103,7 +103,7 @@ class AppMail
      *
      * @ORM\Column(name="is_erpsent", type="string", length=3, nullable=true, options={"default"="'0'"})
      */
-    private $isErpsent = '\'0\'';
+    private $isErpsent = "0";
 
     /**
      * @var string|null

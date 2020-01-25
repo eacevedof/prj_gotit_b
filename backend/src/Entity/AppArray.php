@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * AppArray
  *
  * @ORM\Table(name="app_array")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\AppArrayRepository")
  */
 class AppArray
 {
@@ -103,7 +103,7 @@ class AppArray
      *
      * @ORM\Column(name="is_erpsent", type="string", length=3, nullable=true, options={"default"="'0'"})
      */
-    private $isErpsent = '\'0\'';
+    private $isErpsent = "0";
 
     /**
      * @var string|null
