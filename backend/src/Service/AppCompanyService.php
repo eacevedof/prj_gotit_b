@@ -39,7 +39,7 @@ final class AppCompanyService extends BaseService
             $em->flush();
             
             //return $this->redirectToRoute("pub_index");
-            $this->aroutput["insert"]="ok";
+            $this->aroutput["inserted"] = true;
         }
 
         $this->aroutput["form"] = $form;

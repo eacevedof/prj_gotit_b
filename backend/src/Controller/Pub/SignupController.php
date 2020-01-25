@@ -21,9 +21,11 @@ class SignupController extends AbstractController
         
         $service = new AppCompanyService(["request"=>$request,"encoder"=>$encoder,"container"=>$this->container]);
         $service->insert();
-        $output = $service->getOutput();
-        //var_dump($output);die;
         
+        if($service->isInserted())
+            return $this->redirectToRoute("pub_signup");
+        
+        $output = $service->getOutput();
         return $this->render('pub/signup/index.html.twig', [
             "pagetitle" => "Signup form",
             "form" => $output["form"]->createView()

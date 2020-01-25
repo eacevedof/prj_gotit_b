@@ -19,5 +19,6 @@ abstract class BaseService
     public function getMessages(){return $this->messages;}
     public function isError(){return $this->is_error;}
     public function getOutput($key=""){return ($key ? $this->aroutput[$key]??null: $this->aroutput);}
+    public function isInserted(){return $this->aroutput["inserted"] ?? false;}
     
 }//BaseService
