@@ -15,6 +15,9 @@ php bin/console make:controller AppArrayController
 //cache
 php bin/console cache:clear -e prod
 
+//formulario
+php bin/console make:form
+
 ```
 
 # notas
