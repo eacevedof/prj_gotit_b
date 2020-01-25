@@ -1,6 +1,6 @@
 /*
-SQLyog Ultimate v9.02 
-MySQL - 5.7.27-0ubuntu0.18.04.1 : Database - db_gotit
+SQLyog Community v12.1 (32 bit)
+MySQL - 10.4.11-MariaDB-1:10.4.11+maria~bionic : Database - db_gotit
 *********************************************************************
 */
 
@@ -24,10 +24,10 @@ CREATE TABLE `app_array` (
   `processflag` varchar(5) DEFAULT NULL,
   `insert_platform` varchar(3) DEFAULT '1',
   `insert_user` varchar(15) DEFAULT NULL,
-  `insert_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `insert_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_platform` varchar(3) DEFAULT NULL,
   `update_user` varchar(15) DEFAULT NULL,
-  `update_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `delete_platform` varchar(3) DEFAULT NULL,
   `delete_user` varchar(15) DEFAULT NULL,
   `delete_date` timestamp NULL DEFAULT NULL,
@@ -40,15 +40,15 @@ CREATE TABLE `app_array` (
   `type` varchar(15) DEFAULT NULL,
   `id_tosave` varchar(25) DEFAULT NULL,
   `description` varchar(250) DEFAULT NULL,
-  `order_by` int(5) NOT NULL DEFAULT '100',
+  `order_by` int(5) NOT NULL DEFAULT 100,
   `code_cache` varchar(500) DEFAULT NULL,
   `id_parent` int(11) DEFAULT NULL COMMENT 'para el caso de paises',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 /*Data for the table `app_array` */
 
-insert  into `app_array`(`processflag`,`insert_platform`,`insert_user`,`insert_date`,`update_platform`,`update_user`,`update_date`,`delete_platform`,`delete_user`,`delete_date`,`cru_csvnote`,`is_erpsent`,`is_enabled`,`i`,`id`,`code_erp`,`type`,`id_tosave`,`description`,`order_by`,`code_cache`,`id_parent`) values (NULL,'1',NULL,'2019-09-14 17:51:23',NULL,NULL,'2019-09-14 17:51:51',NULL,NULL,NULL,NULL,'0','1',NULL,1,NULL,'countries',NULL,'generic',100,NULL,NULL),(NULL,'1',NULL,'2019-09-14 17:51:32',NULL,NULL,'2019-09-14 17:52:01',NULL,NULL,NULL,NULL,'0','1',NULL,2,NULL,'countries',NULL,'aua',100,NULL,NULL),(NULL,'1',NULL,'2019-09-14 17:51:48',NULL,NULL,'2019-09-14 17:52:05',NULL,NULL,NULL,NULL,'0','1',NULL,3,NULL,'countries',NULL,'es',100,NULL,NULL);
+insert  into `app_array`(`processflag`,`insert_platform`,`insert_user`,`insert_date`,`update_platform`,`update_user`,`update_date`,`delete_platform`,`delete_user`,`delete_date`,`cru_csvnote`,`is_erpsent`,`is_enabled`,`i`,`id`,`code_erp`,`type`,`id_tosave`,`description`,`order_by`,`code_cache`,`id_parent`) values (NULL,'1',NULL,'2019-09-14 17:51:23',NULL,NULL,'2019-09-14 17:51:51',NULL,NULL,NULL,NULL,'0','1',NULL,1,NULL,'countries',NULL,'generic',100,NULL,NULL),(NULL,'1',NULL,'2019-09-14 17:51:32',NULL,NULL,'2019-09-14 17:52:01',NULL,NULL,NULL,NULL,'0','1',NULL,2,NULL,'countries',NULL,'aua',100,NULL,NULL),(NULL,'1',NULL,'2019-09-14 17:51:48',NULL,NULL,'2019-09-14 17:52:05',NULL,NULL,NULL,NULL,'0','1',NULL,3,NULL,'countries',NULL,'es',100,NULL,NULL),(NULL,'1',NULL,'2020-01-21 20:58:27',NULL,NULL,'2020-01-21 20:58:31',NULL,NULL,NULL,NULL,'0','1',NULL,4,NULL,'sector',NULL,'generic',100,NULL,NULL);
 
 /*Table structure for table `app_array_lang` */
 
@@ -58,10 +58,10 @@ CREATE TABLE `app_array_lang` (
   `processflag` varchar(5) DEFAULT NULL,
   `insert_platform` varchar(3) DEFAULT '1',
   `insert_user` varchar(15) DEFAULT NULL,
-  `insert_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `insert_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_platform` varchar(3) DEFAULT NULL,
   `update_user` varchar(15) DEFAULT NULL,
-  `update_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `delete_platform` varchar(3) DEFAULT NULL,
   `delete_user` varchar(15) DEFAULT NULL,
   `delete_date` timestamp NULL DEFAULT NULL,
@@ -87,10 +87,10 @@ CREATE TABLE `app_company` (
   `processflag` varchar(5) DEFAULT NULL,
   `insert_platform` varchar(3) DEFAULT '1',
   `insert_user` varchar(15) DEFAULT NULL,
-  `insert_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `insert_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_platform` varchar(3) DEFAULT NULL,
   `update_user` varchar(15) DEFAULT NULL,
-  `update_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `delete_platform` varchar(3) DEFAULT NULL,
   `delete_user` varchar(15) DEFAULT NULL,
   `delete_date` timestamp NULL DEFAULT NULL,
@@ -115,6 +115,7 @@ CREATE TABLE `app_company` (
   `address` varchar(100) DEFAULT NULL,
   `url_logo` varchar(500) DEFAULT NULL,
   `id_status` int(11) DEFAULT NULL COMMENT 'app_array.id (type=companystatus)',
+  `role` varchar(50) DEFAULT NULL COMMENT 'symfony.role',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -128,10 +129,10 @@ CREATE TABLE `app_company_bonus` (
   `processflag` varchar(5) DEFAULT NULL,
   `insert_platform` varchar(3) DEFAULT '1',
   `insert_user` varchar(15) DEFAULT NULL,
-  `insert_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `insert_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_platform` varchar(3) DEFAULT NULL,
   `update_user` varchar(15) DEFAULT NULL,
-  `update_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `delete_platform` varchar(3) DEFAULT NULL,
   `delete_user` varchar(15) DEFAULT NULL,
   `delete_date` timestamp NULL DEFAULT NULL,
@@ -159,10 +160,10 @@ CREATE TABLE `app_company_prospects` (
   `processflag` varchar(5) DEFAULT NULL,
   `insert_platform` varchar(3) DEFAULT '1',
   `insert_user` varchar(15) DEFAULT NULL,
-  `insert_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `insert_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_platform` varchar(3) DEFAULT NULL,
   `update_user` varchar(15) DEFAULT NULL,
-  `update_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `delete_platform` varchar(3) DEFAULT NULL,
   `delete_user` varchar(15) DEFAULT NULL,
   `delete_date` timestamp NULL DEFAULT NULL,
@@ -187,10 +188,10 @@ CREATE TABLE `app_languages` (
   `processflag` varchar(5) DEFAULT NULL,
   `insert_platform` varchar(3) DEFAULT '1',
   `insert_user` varchar(15) DEFAULT NULL,
-  `insert_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `insert_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_platform` varchar(3) DEFAULT NULL,
   `update_user` varchar(15) DEFAULT NULL,
-  `update_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `delete_platform` varchar(3) DEFAULT NULL,
   `delete_user` varchar(15) DEFAULT NULL,
   `delete_date` timestamp NULL DEFAULT NULL,
@@ -202,7 +203,7 @@ CREATE TABLE `app_languages` (
   `code_erp` varchar(25) DEFAULT NULL,
   `code` varchar(25) DEFAULT NULL,
   `description` varchar(250) DEFAULT NULL,
-  `order_by` int(5) NOT NULL DEFAULT '100',
+  `order_by` int(5) NOT NULL DEFAULT 100,
   `code_cache` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
@@ -219,10 +220,10 @@ CREATE TABLE `app_mail` (
   `processflag` varchar(5) DEFAULT NULL,
   `insert_platform` varchar(3) DEFAULT '1',
   `insert_user` varchar(15) DEFAULT NULL,
-  `insert_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `insert_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_platform` varchar(3) DEFAULT NULL,
   `update_user` varchar(15) DEFAULT NULL,
-  `update_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `delete_platform` varchar(3) DEFAULT NULL,
   `delete_user` varchar(15) DEFAULT NULL,
   `delete_date` timestamp NULL DEFAULT NULL,
@@ -237,7 +238,7 @@ CREATE TABLE `app_mail` (
   `cc` varchar(2000) DEFAULT NULL,
   `bcc` varchar(2000) DEFAULT NULL,
   `subject` varchar(500) DEFAULT NULL,
-  `body` mediumtext,
+  `body` mediumtext DEFAULT NULL,
   `id_status` int(11) DEFAULT NULL COMMENT 'app_array.id (type=mailstatus)',
   `id_entity` varchar(25) DEFAULT NULL COMMENT 'app_table.id',
   `id_entity_desc` int(11) DEFAULT NULL COMMENT 'app_array.id (type=entities)',
@@ -254,10 +255,10 @@ CREATE TABLE `app_mail_attachments` (
   `processflag` varchar(5) DEFAULT NULL,
   `insert_platform` varchar(3) DEFAULT '1',
   `insert_user` varchar(15) DEFAULT NULL,
-  `insert_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `insert_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_platform` varchar(3) DEFAULT NULL,
   `update_user` varchar(15) DEFAULT NULL,
-  `update_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `delete_platform` varchar(3) DEFAULT NULL,
   `delete_user` varchar(15) DEFAULT NULL,
   `delete_date` timestamp NULL DEFAULT NULL,
@@ -282,10 +283,10 @@ CREATE TABLE `app_promotion` (
   `processflag` varchar(5) DEFAULT NULL,
   `insert_platform` varchar(3) DEFAULT '1',
   `insert_user` varchar(15) DEFAULT NULL,
-  `insert_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `insert_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_platform` varchar(3) DEFAULT NULL,
   `update_user` varchar(15) DEFAULT NULL,
-  `update_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `delete_platform` varchar(3) DEFAULT NULL,
   `delete_user` varchar(15) DEFAULT NULL,
   `delete_date` timestamp NULL DEFAULT NULL,
@@ -320,10 +321,10 @@ CREATE TABLE `app_promotion_categories` (
   `processflag` varchar(5) DEFAULT NULL,
   `insert_platform` varchar(3) DEFAULT '1',
   `insert_user` varchar(15) DEFAULT NULL,
-  `insert_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `insert_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_platform` varchar(3) DEFAULT NULL,
   `update_user` varchar(15) DEFAULT NULL,
-  `update_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `delete_platform` varchar(3) DEFAULT NULL,
   `delete_user` varchar(15) DEFAULT NULL,
   `delete_date` timestamp NULL DEFAULT NULL,
@@ -332,7 +333,7 @@ CREATE TABLE `app_promotion_categories` (
   `is_enabled` varchar(3) DEFAULT '1',
   `i` int(11) DEFAULT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `order_by` int(5) NOT NULL DEFAULT '100',
+  `order_by` int(5) NOT NULL DEFAULT 100,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -346,10 +347,10 @@ CREATE TABLE `app_promotion_categories_lang` (
   `processflag` varchar(5) DEFAULT NULL,
   `insert_platform` varchar(3) DEFAULT '1',
   `insert_user` varchar(15) DEFAULT NULL,
-  `insert_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `insert_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_platform` varchar(3) DEFAULT NULL,
   `update_user` varchar(15) DEFAULT NULL,
-  `update_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `delete_platform` varchar(3) DEFAULT NULL,
   `delete_user` varchar(15) DEFAULT NULL,
   `delete_date` timestamp NULL DEFAULT NULL,
@@ -358,8 +359,8 @@ CREATE TABLE `app_promotion_categories_lang` (
   `is_enabled` varchar(3) DEFAULT '1',
   `i` int(11) DEFAULT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_promotion_categories` int(11) DEFAULT '1' COMMENT 'app_promotion_categories.id',
-  `id_language` int(11) NOT NULL DEFAULT '1' COMMENT 'app_languages.id',
+  `id_promotion_categories` int(11) DEFAULT 1 COMMENT 'app_promotion_categories.id',
+  `id_language` int(11) NOT NULL DEFAULT 1 COMMENT 'app_languages.id',
   `description` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -374,10 +375,10 @@ CREATE TABLE `app_promotion_lang` (
   `processflag` varchar(5) DEFAULT NULL,
   `insert_platform` varchar(3) DEFAULT '1',
   `insert_user` varchar(15) DEFAULT NULL,
-  `insert_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `insert_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_platform` varchar(3) DEFAULT NULL,
   `update_user` varchar(15) DEFAULT NULL,
-  `update_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `delete_platform` varchar(3) DEFAULT NULL,
   `delete_user` varchar(15) DEFAULT NULL,
   `delete_date` timestamp NULL DEFAULT NULL,
@@ -387,7 +388,7 @@ CREATE TABLE `app_promotion_lang` (
   `i` int(11) DEFAULT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_promotion` int(11) DEFAULT NULL COMMENT 'app_promotion.id',
-  `id_language` int(11) DEFAULT '1' COMMENT 'app_languages.id',
+  `id_language` int(11) DEFAULT 1 COMMENT 'app_languages.id',
   `title` varchar(100) DEFAULT NULL,
   `description` varchar(250) DEFAULT NULL,
   `url_image` varchar(500) DEFAULT NULL,
@@ -404,10 +405,10 @@ CREATE TABLE `app_promotion_notifications` (
   `processflag` varchar(5) DEFAULT NULL,
   `insert_platform` varchar(3) DEFAULT '1',
   `insert_user` varchar(15) DEFAULT NULL,
-  `insert_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `insert_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_platform` varchar(3) DEFAULT NULL,
   `update_user` varchar(15) DEFAULT NULL,
-  `update_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `delete_platform` varchar(3) DEFAULT NULL,
   `delete_user` varchar(15) DEFAULT NULL,
   `delete_date` timestamp NULL DEFAULT NULL,
@@ -433,10 +434,10 @@ CREATE TABLE `app_promotions_categories` (
   `processflag` varchar(5) DEFAULT NULL,
   `insert_platform` varchar(3) DEFAULT '1',
   `insert_user` varchar(15) DEFAULT NULL,
-  `insert_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `insert_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_platform` varchar(3) DEFAULT NULL,
   `update_user` varchar(15) DEFAULT NULL,
-  `update_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `delete_platform` varchar(3) DEFAULT NULL,
   `delete_user` varchar(15) DEFAULT NULL,
   `delete_date` timestamp NULL DEFAULT NULL,
@@ -460,10 +461,10 @@ CREATE TABLE `app_promotions_prospects` (
   `processflag` varchar(5) DEFAULT NULL,
   `insert_platform` varchar(3) DEFAULT '1',
   `insert_user` varchar(15) DEFAULT NULL,
-  `insert_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `insert_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_platform` varchar(3) DEFAULT NULL,
   `update_user` varchar(15) DEFAULT NULL,
-  `update_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `delete_platform` varchar(3) DEFAULT NULL,
   `delete_user` varchar(15) DEFAULT NULL,
   `delete_date` timestamp NULL DEFAULT NULL,
@@ -487,10 +488,10 @@ CREATE TABLE `app_promotions_prospects_points` (
   `processflag` varchar(5) DEFAULT NULL,
   `insert_platform` varchar(3) DEFAULT '1',
   `insert_user` varchar(15) DEFAULT NULL,
-  `insert_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `insert_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_platform` varchar(3) DEFAULT NULL,
   `update_user` varchar(15) DEFAULT NULL,
-  `update_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `delete_platform` varchar(3) DEFAULT NULL,
   `delete_user` varchar(15) DEFAULT NULL,
   `delete_date` timestamp NULL DEFAULT NULL,
@@ -516,10 +517,10 @@ CREATE TABLE `app_prospect` (
   `processflag` varchar(5) DEFAULT NULL,
   `insert_platform` varchar(3) DEFAULT '1',
   `insert_user` varchar(15) DEFAULT NULL,
-  `insert_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `insert_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `update_platform` varchar(3) DEFAULT NULL,
   `update_user` varchar(15) DEFAULT NULL,
-  `update_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_date` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `delete_platform` varchar(3) DEFAULT NULL,
   `delete_user` varchar(15) DEFAULT NULL,
   `delete_date` timestamp NULL DEFAULT NULL,
@@ -536,124 +537,51 @@ CREATE TABLE `app_prospect` (
   `id_gender` int(11) DEFAULT NULL COMMENT 'app_array.id (type=gender)',
   `id_country` int(11) DEFAULT NULL COMMENT 'app_array.id (type=countries)',
   `id_city` int(11) DEFAULT NULL COMMENT 'app_array.id (type=cities)',
-  `id_language` int(11) DEFAULT '1' COMMENT 'app_languages.id',
+  `id_language` int(11) DEFAULT 1 COMMENT 'app_languages.id',
   `total_points` int(11) DEFAULT NULL COMMENT 'puntos acumulados',
   `url_picture` varchar(250) DEFAULT NULL,
   `phone` varchar(25) DEFAULT NULL,
   `id_status` int(11) DEFAULT NULL COMMENT 'app_array.id (type=userstatus)',
+  `role` varchar(50) DEFAULT NULL COMMENT 'symfony role',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `app_prospect` */
 
-/* Procedure structure for procedure `prc_clone_row` */
+/*Table structure for table `app_user` */
 
-/*!50003 DROP PROCEDURE IF EXISTS  `prc_clone_row` */;
+DROP TABLE IF EXISTS `app_user`;
 
-DELIMITER $$
+CREATE TABLE `app_user` (
+  `processflag` varchar(5) DEFAULT NULL,
+  `insert_platform` varchar(3) DEFAULT '1',
+  `insert_user` varchar(15) DEFAULT NULL,
+  `insert_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `update_platform` varchar(3) DEFAULT NULL,
+  `update_user` varchar(15) DEFAULT NULL,
+  `update_date` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `delete_platform` varchar(3) DEFAULT NULL,
+  `delete_user` varchar(15) DEFAULT NULL,
+  `delete_date` timestamp NULL DEFAULT NULL,
+  `cru_csvnote` varchar(500) DEFAULT NULL,
+  `is_erpsent` varchar(3) DEFAULT '0',
+  `is_enabled` varchar(3) DEFAULT '1',
+  `i` int(11) DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code_erp` varchar(25) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `password` varchar(250) DEFAULT NULL,
+  `nickname` varchar(50) DEFAULT NULL,
+  `notes` varchar(500) DEFAULT NULL,
+  `phone` varchar(25) DEFAULT NULL,
+  `url_profile` varchar(500) DEFAULT NULL,
+  `id_status` int(11) DEFAULT NULL COMMENT 'app_array.id (type=userstatus)',
+  `role` varchar(50) DEFAULT NULL COMMENT 'symfony.role',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `prc_clone_row`(
-    sTableName VARCHAR(25)
-    ,sId VARCHAR(5)
-    )
-BEGIN
-    SET @sSQL := CONCAT('SELECT (MAX(id)+1) AS idnew FROM ',sTableName,' INTO @sIdNew');
-    PREPARE sExecute FROM @sSQL;
-    EXECUTE sExecute;
-    IF (@sIdNew IS NOT NULL) THEN
-        SET @sSQL := CONCAT('CREATE TEMPORARY TABLE tempo_table SELECT * FROM ',sTableName,' WHERE id = ',sId,'; ');
-        PREPARE sExecute FROM @sSQL;
-        EXECUTE sExecute; 
-           
-        SET @sSQL := CONCAT('UPDATE tempo_table SET id=',@sIdNew,' WHERE id=',sId,'; ');
-        PREPARE sExecute FROM @sSQL;
-        EXECUTE sExecute;        
-        
-        SET @sSQL := CONCAT('INSERT INTO ',sTableName,' SELECT * FROM tempo_table WHERE id=',@sIdNew,'; ');
-        PREPARE sExecute FROM @sSQL;
-        EXECUTE sExecute; 
-        SET @sSQL := CONCAT('SELECT * FROM ',sTableName,' ORDER BY id DESC;');
-        PREPARE sExecute FROM @sSQL;
-        EXECUTE sExecute;   
-    ELSE
-        SELECT CONCAT('TABLE ',sTableName,' IS EMPTY!!!') AS msg;
-    END IF;
-   
-END */$$
-DELIMITER ;
-
-/* Procedure structure for procedure `prc_get_version` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `prc_get_version` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `prc_get_version`()
-BEGIN
-    SET @sDB := (SELECT DATABASE());
-    SET @iTables :=(
-        SELECT COUNT(*)
-        FROM information_schema.TABLES
-        WHERE (TABLE_SCHEMA = @sDB) 
-        AND (TABLE_NAME = 'version_db')
-    );
-    IF (@iTables=1) THEN
-        SELECT * FROM version_db ORDER BY id DESC LIMIT 1;
-    ELSEIF (@iTables=0) THEN
-        SELECT 'no version table' AS ver_schema;
-    END IF;
-END */$$
-DELIMITER ;
-
-/* Procedure structure for procedure `prc_table` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `prc_table` */;
-
-DELIMITER $$
-
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `prc_table`(
-    sTableName VARCHAR(25)
-    ,sFieldName VARCHAR(50)
-    )
-BEGIN
-    SET @sDB := (SELECT DATABASE());
-    SET @sSQL = '
-    SELECT table_name AS tablename 
-    ,LOWER(column_name) AS fieldname 
-    ,CASE COALESCE(pks.cn,\'\')
-        WHEN \'\' THEN \'\'
-        ELSE \'Y\'
-    END AS ispk
-    ,LOWER(DATA_TYPE) AS fieldtype
-    ,CASE LOWER(DATA_TYPE) 
-        WHEN \'datetime\' THEN 19 
-        ELSE character_maximum_length 
-    END AS fieldlen
-    -- ,\'\' AS selectall
-    FROM information_schema.columns
-    LEFT JOIN
-    (
-        SELECT DISTINCT table_name AS tn,column_name AS cn
-        FROM information_schema.key_column_usage
-        WHERE table_schema = schema()   -- only look in the current db
-        AND constraint_name = \'PRIMARY\' -- always PRIMARY for PRIMARY KEY constraints
-    ) AS pks
-    ON pks.tn = table_name AND pks.cn=column_name 
-    WHERE 1=1 ';
-    -- incluyo la bd
-    SET @sSQL := CONCAT(@sSQL,'AND table_schema=\'',@sDB,'\''); 
-    -- tabla
-    IF(sTableName IS NOT NULL AND sTableName!='')THEN
-        SET @sSQL := CONCAT(@sSQL,'AND table_name LIKE \'%',sTableName,'%\' ');    
-    END IF;
-    IF(sFieldName IS NOT NULL AND sFieldName!='')THEN
-        SET @sSQL := CONCAT(@sSQL,'AND LOWER(column_name) LIKE \'%',sFieldName,'%\' ');    
-    END IF;
-    SET @sSQL := CONCAT(@sSQL,'ORDER BY tablename,ORDINAL_POSITION, fieldname ASC ');
-    PREPARE sExecute FROM @sSQL;
-    EXECUTE sExecute;
-END */$$
-DELIMITER ;
+/*Data for the table `app_user` */
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

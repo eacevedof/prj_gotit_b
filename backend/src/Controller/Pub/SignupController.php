@@ -28,7 +28,7 @@ class SignupController extends AbstractController
         {
 //var_dump($_POST);
 //die("xxx");                 
-            //$company->setRole("ROLE_USER");
+            $company->setRole("ROLE_USER");
             $passencoded = $encoder->encodePassword($company,$company->getPassword());
             $company->setPassword($passencoded);
             

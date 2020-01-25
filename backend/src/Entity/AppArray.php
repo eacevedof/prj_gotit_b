@@ -20,7 +20,7 @@ class AppArray
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
-
+    
     /**
      * @var string|null
      *
@@ -171,8 +171,8 @@ class AppArray
     public function getId(): ?int
     {
         return $this->id;
-    }
-
+    } 
+    
     public function getProcessflag(): ?string
     {
         return $this->processflag;

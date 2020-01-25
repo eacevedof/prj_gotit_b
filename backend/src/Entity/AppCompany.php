@@ -24,7 +24,14 @@ class AppCompany implements UserInterface
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
-
+    
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="role", type="string", length=50, nullable=true)
+     */
+    private $role = null;
+    
     /**
      * @var string|null
      *
@@ -37,7 +44,7 @@ class AppCompany implements UserInterface
      *
      * @ORM\Column(name="insert_platform", type="string", length=3, nullable=true, options={"default"="'1'"})
      */
-    private $insertPlatform = "'1'";
+    private $insertPlatform = "1";
 
     /**
      * @var string|null
@@ -240,6 +247,24 @@ class AppCompany implements UserInterface
         return $this->id;
     }
 
+    public function getRole(): ?string
+    {
+        return $this->role;
+    }
+
+    public function setRole(?string $role): self
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+    
+    public function getRoles()
+    {
+        //$this->getRole();
+        return ["ROLE_USER"];
+    }   
+    
     public function getProcessflag(): ?string
     {
         return $this->processflag;
@@ -610,13 +635,6 @@ class AppCompany implements UserInterface
     public function getUsername(): string 
     {
         return $this->email;
-    }
-
-    public function getRoles(): array
-    {
-        return ["ROLE_USER"];
-    }
-
-    
+    }    
     
 }// AppCompany
