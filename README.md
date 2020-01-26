@@ -25,3 +25,6 @@ php bin/console make:form
 
 # notas
 - src/Services no se puede llamar así, debe ser Service sino crea un conflicto
+
+# material de consulta
+- https://www.youtube.com/watch?v=ROCuGK1M-XI&list=PLcLoUdtOOXL3URMZDynj_Qfpq6TIdclHI

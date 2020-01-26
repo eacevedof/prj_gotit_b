@@ -36,7 +36,7 @@ final class AppCompanyService extends BaseService
             $em = $container->get("doctrine")->getManager();
             $em->persist($company);
             $em->flush();
-
+            $this->log("loggggg","tiiiituu");
             $this->aroutput["inserted"] = true;
         }
         
